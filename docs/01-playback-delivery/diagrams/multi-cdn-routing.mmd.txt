@@ -1,0 +1,9 @@
+flowchart LR
+  Client --> Steering
+  Steering --> CDN_A
+  Steering --> CDN_B
+  Steering --> CDN_C
+  CDN_A --> Shield
+  CDN_B --> Shield
+  CDN_C --> Shield
+  Shield --> Origin

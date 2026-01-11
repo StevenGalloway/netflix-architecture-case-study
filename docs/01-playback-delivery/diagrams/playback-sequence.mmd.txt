@@ -1,0 +1,19 @@
+sequenceDiagram
+  participant Client
+  participant SessionService
+  participant Auth
+  participant Manifest
+  participant CDN
+  participant Origin
+
+  Client->>SessionService: StartPlayback
+  SessionService->>Auth: VerifyEntitlement
+  Auth-->>SessionService: OK
+  SessionService->>Manifest: GenerateSignedManifest
+  Manifest-->>SessionService: URL + Token
+  SessionService-->>Client: PlaybackSession
+  Client->>CDN: FetchManifest
+  CDN->>Origin: CacheMiss?
+  Origin-->>CDN: Content
+  CDN-->>Client: Manifest & Segments
+  Client-->>SessionService: QoE Telemetry
