@@ -1,32 +1,46 @@
-# System Design Case Studies
+# Netflix Architecture Principles
 
-This repository contains interview-grade system designs written as production proposals.
+This repository presents reference architectures that demonstrate how large-scale streaming platforms — modeled after Netflix — design for performance, resilience, security, and velocity.
 
-Each case study includes:
-- Functional & non-functional requirements
-- Architecture & data flow
-- Scaling strategies
-- Reliability & failure handling
-- Security, observability, and cost considerations
+The goal is to showcase real-world Solutions Architect thinking through:
+- architecture diagrams
+- system design decisions
+- tradeoff analysis
+- failure modes & recovery
+- security models
+- SLO-driven engineering
+- operational readiness
 
----
+## Core Design Principles
 
-## Case Studies
+- Separation of Control Plane and Data Plane  
+- Multi-CDN Streaming & Global Traffic Steering  
+- Cell-Based Architecture & Blast-Radius Containment  
+- SLO-Driven Reliability Engineering  
+- Zero Trust Security & Short-Lived Credentials  
+- Progressive Delivery & Safe Rollouts  
+- Graceful Degradation with Playback First  
+- Event-Driven Content Supply Chain  
+- Data-Driven Personalization & Experimentation  
+- Chaos Engineering & Continuous Resilience Validation
 
-| System | Focus |
-|------|------|
-| Real-Time Fraud Detection | Low latency & explainability |
-| Analytics Platform | Lakehouse, governance, cost control |
-| Notification Service | Throughput, retries, idempotency |
-| Feature Flag Platform | Safe rollout & telemetry |
+## Architecture Domains
 
----
+| Domain | Description |
+|------|------------|
+| Playback Delivery | Global low-latency streaming platform |
+| Content Supply Chain | Ingest → Encode → Package → Publish |
+| Identity / DRM | Secure playback & entitlements |
+| Personalization | Recommendations & experimentation |
+| Global Resilience | Multi-region fault tolerance |
+| Observability | QoE telemetry & SRE operations |
 
-## Standard Sections
-1. Requirements & assumptions  
-2. Architecture diagram  
-3. Data flow & components  
-4. Scaling strategy  
-5. Failure modes & mitigation  
-6. Security & privacy  
-7. Operations & monitoring
+Each system folder contains:
+- architecture diagrams
+- system overview & design rationale
+- pros/cons & tradeoffs
+- failure modes & mitigations
+- SLOs and operational runbooks
+- Architecture Decision Records (ADRs)
+
+This repository is designed to simulate real internal design documentation for interview, review, and architectural discussion.
