@@ -35,7 +35,7 @@ The goal is to showcase real-world Solutions Architect thinking through:
 | Global Resilience | Multi-region fault tolerance |
 | Observability | QoE telemetry & SRE operations |
 
-Each system folder contains:
+Each system folder may contain:
 - architecture diagrams
 - system overview & design rationale
 - pros/cons & tradeoffs
