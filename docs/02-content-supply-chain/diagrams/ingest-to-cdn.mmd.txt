@@ -1,0 +1,17 @@
+flowchart LR
+    Studio[Studio Delivery]
+    Ingest[Ingest & Validation]
+    QC[Quality Control]
+    Transcode[Transcoding Pipeline]
+    Package[Packaging & DRM]
+    Publish[Global Publish Service]
+    CDN[CDN Distribution]
+    Playback[Playback Platform]
+
+    Studio --> Ingest
+    Ingest --> QC
+    QC --> Transcode
+    Transcode --> Package
+    Package --> Publish
+    Publish --> CDN
+    CDN --> Playback
