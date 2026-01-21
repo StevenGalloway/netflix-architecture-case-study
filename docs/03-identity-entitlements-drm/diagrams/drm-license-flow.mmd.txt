@@ -1,0 +1,20 @@
+sequenceDiagram
+    autonumber
+    participant Client
+    participant Auth as Auth Service
+    participant Entitlements
+    participant Session as Playback Session Service
+    participant DRM as DRM License Service
+    participant HSM as Key Vault / HSM
+
+    Client->>Auth: Authenticate User
+    Auth-->>Client: Auth Token
+    Client->>Session: Request Playback Session
+    Session->>Entitlements: Validate Entitlements
+    Entitlements-->>Session: Policy OK
+    Session-->>Client: Playback Token
+    Client->>DRM: Request License (Playback Token)
+    DRM->>HSM: Retrieve Encryption Keys
+    HSM-->>DRM: Keys
+    DRM-->>Client: DRM License
+    Client->>Client: Begin Secure Playback
