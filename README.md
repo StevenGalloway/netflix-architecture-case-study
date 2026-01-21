@@ -1,6 +1,6 @@
 # Netflix Architecture Principles
 
-This repository presents reference architectures that demonstrate how large-scale streaming platforms — modeled after Netflix — design for performance, resilience, security, and velocity.
+This repository presents reference architectures that demonstrate how large-scale streaming platforms, modeled after Netflix, designed for performance, resilience, security, and velocity.
 
 The goal is to showcase real-world Solutions Architect thinking through:
 - architecture diagrams
