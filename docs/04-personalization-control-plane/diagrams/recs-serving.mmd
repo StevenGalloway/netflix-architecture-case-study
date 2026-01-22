@@ -1,0 +1,18 @@
+flowchart LR
+    Client --> API[Personalization API]
+    API --> Candidate[Candidate Generation]
+    Candidate --> Ranking[ML Ranking Models]
+    Ranking --> Rules[Business Rules & Experiments]
+    Rules --> UI[UI Configuration Service]
+    UI --> Client
+
+    subgraph Data
+        Features[Feature Store]
+        Models[Model Registry]
+        Metrics[Engagement Metrics]
+    end
+
+    Ranking --> Features
+    Ranking --> Models
+    Client --> Metrics
+    Metrics --> Features
