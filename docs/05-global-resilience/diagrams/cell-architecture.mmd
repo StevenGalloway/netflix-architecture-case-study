@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph CellA
+        A1[Playback]
+        A2[Control Plane]
+        A3[DRM]
+    end
+
+    subgraph CellB
+        B1[Playback]
+        B2[Control Plane]
+        B3[DRM]
+    end
+
+    Client --> CellA
+    Client --> CellB

@@ -1,0 +1,8 @@
+flowchart LR
+    User --> GSLB[Global Load Balancer]
+    GSLB --> RegionA
+    GSLB --> RegionB
+    GSLB --> RegionC
+
+    RegionA -->|Fail| RegionB
+    RegionB -->|Fail| RegionC
