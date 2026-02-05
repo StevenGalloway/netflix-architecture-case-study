@@ -1,0 +1,6 @@
+flowchart LR
+    Playback --> QoE[QoE Collector]
+    QoE --> Analytics[Analytics Engine]
+    Analytics --> Optimization[Optimization Engine]
+    Optimization --> Routing[Traffic Steering]
+    Routing --> Playback

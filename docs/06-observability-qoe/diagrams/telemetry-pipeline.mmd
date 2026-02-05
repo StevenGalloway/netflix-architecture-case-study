@@ -1,0 +1,10 @@
+flowchart LR
+    Client --> Telemetry[Telemetry Ingest]
+    Services --> Telemetry
+    Telemetry --> Stream[Streaming Pipeline]
+    Stream --> Metrics[Metrics Store]
+    Stream --> Logs[Log Store]
+    Stream --> Traces[Trace Store]
+    Metrics --> Dashboards
+    Logs --> Dashboards
+    Traces --> Dashboards
