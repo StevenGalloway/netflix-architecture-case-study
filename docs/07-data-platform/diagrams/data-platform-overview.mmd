@@ -1,0 +1,43 @@
+flowchart LR
+    subgraph Producers
+        Clients[Client SDK Events]
+        Services[Service Telemetry]
+        CDC[Database CDC]
+    end
+
+    subgraph Ingest
+        Kafka[Kafka Event Bus]
+        Schema[Schema Registry]
+    end
+
+    subgraph Processing
+        Flink[Flink Stream Processing]
+        Spark[Spark Batch Processing]
+    end
+
+    subgraph Storage
+        Iceberg[Iceberg Lakehouse]
+        OnlineFS[Online Feature Store]
+        OfflineFS[Offline Feature Store]
+    end
+
+    subgraph Consumers
+        ML[ML Serving]
+        Analytics[Analytics Dashboards]
+        Alerts[Alerting Engine]
+    end
+
+    Clients --> Kafka
+    Services --> Kafka
+    CDC --> Kafka
+    Kafka --> Schema
+    Kafka --> Flink
+    Kafka --> Spark
+    Flink --> OnlineFS
+    Flink --> Iceberg
+    Spark --> Iceberg
+    Iceberg --> OfflineFS
+    OnlineFS --> ML
+    OfflineFS --> ML
+    Iceberg --> Analytics
+    Flink --> Alerts
